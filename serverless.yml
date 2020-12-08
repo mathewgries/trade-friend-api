@@ -42,6 +42,7 @@ functions:
       - http:
           path: watchlist
           method: post
+          authorizer: aws_iam
 
   get:
     handler: get.main
@@ -49,6 +50,7 @@ functions:
       - http: 
           path: watchlist/{id}
           method: get
+          authorizer: aws_iam
 
   list:
     handler: list.main
@@ -56,6 +58,7 @@ functions:
       - http:
           path: watchlist
           method: get
+          authorizer: aws_iam
 
   update:
     handler: update.main
@@ -63,6 +66,7 @@ functions:
       - http:
           path: watchlist/{id}
           method: put
+          authorizer: aws_iam
 
   delete:
     handler: delete.main
@@ -70,3 +74,4 @@ functions:
       - http:
           path: watchlist/{id}
           method: delete
+          authorizer: aws_iam
