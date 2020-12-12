@@ -21,7 +21,7 @@ provider:
   # commit your .env.
   #
   environment:
-    tableName: watchlist
+    tableName: watchlists
 
   iamRoleStatements:
     - Effect: Allow
@@ -37,46 +37,46 @@ provider:
 
 functions:
   create:
-    handler: create.main
+    handler: watchlists/create.main
     events:
       - http:
-          path: watchlist
+          path: watchlists
           method: post
           cors: true
           authorizer: aws_iam
 
   get:
-    handler: get.main
+    handler: watchlists/get.main
     events:
       - http: 
-          path: watchlist/{id}
+          path: watchlists/{id}
           method: get
           cors: true
           authorizer: aws_iam
 
   list:
-    handler: list.main
+    handler: watchlists/list.main
     events:
       - http:
-          path: watchlist
+          path: watchlists
           method: get
           cors: true
           authorizer: aws_iam
 
   update:
-    handler: update.main
+    handler: watchlists/update.main
     events:
       - http:
-          path: watchlist/{id}
+          path: watchlists/{id}
           method: put
           cors: true
           authorizer: aws_iam
 
   delete:
-    handler: delete.main
+    handler: watchlists/delete.main
     events:
       - http:
-          path: watchlist/{id}
+          path: watchlists/{id}
           method: delete
           cors: true
           authorizer: aws_iam
