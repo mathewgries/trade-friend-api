@@ -12,10 +12,11 @@ export const main = handler(async (event, context) => {
         },
         // 'UpdateExpression' defines the attributes to be updated
         // 'ExpressionAttributeValues' defines the value in the update expression
-        UpdateExpression: `SET watchlistName = :watchlistName, tickers = :tickers`,
+        UpdateExpression: `SET watchlistName = :watchlistName, tickers = :tickers, modified = :modified`,
         ExpressionAttributeValues: {
             ":watchlistName": data.watchlistName || null,
             ":tickers": data.tickers || null,
+            ":modified": Date.now(),
         },
         // 'ReturnValues' specifies if and how to return the item's attributes,
         // where ALL_NEW returns all attributes of the item after the update; you

@@ -4,6 +4,7 @@ import dynamoDb from '../libs/dynamodb-lib';
 
 export const main = handler(async (event, context) => {
     const data = JSON.parse(event.body);
+    const timestamp = Date.now();
     const params = {
         TableName: process.env.tableName,
         Item: {
@@ -11,7 +12,8 @@ export const main = handler(async (event, context) => {
             watchlistId: uuid.v1(),
             watchlistName: data.watchlistName,
             tickers: [],
-            created: Date.now(),
+            created: timestamp,
+            modified: timestamp,
         },
     };
 
