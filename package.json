@@ -1,6 +1,6 @@
 {
   "name": "trade-friend-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Serverless starter that adds ES6, TypeScript, serverless-offline, linting, environment variables, and unit test support. Part of the [Serverless Stack](http://serverless-stack.com) guide.",
   "main": "index.js",
   "scripts": {
